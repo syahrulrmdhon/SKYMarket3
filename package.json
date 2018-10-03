@@ -1,0 +1,23 @@
+{
+  "name": "skymarket3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syahrulrmdhon/SKYMarket3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syahrulrmdhon/SKYMarket3/issues"
+  },
+  "homepage": "https://github.com/syahrulrmdhon/SKYMarket3#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-shell": "^0.6.5"
+  }
+}
