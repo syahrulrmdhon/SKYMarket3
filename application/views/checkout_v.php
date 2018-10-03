@@ -1,30 +1,29 @@
 <?php
   include_once('layout/wrapper.php');
- ?>
- <?php
+?>
+    <?php
 // Proteksi halaman
     $this->simple_login->cek_login();
-  ?>
+    ?>
   <section id="cart_items">
-    		<div class="container">
-    			<div class="breadcrumbs">
-    				<ol class="breadcrumb">
-    				  <li><a href="<?php echo base_url('Home')?>">Home</a></li>
-    				  <li class="active">Check out</li>
+            <div class="container">
+                <div class="breadcrumbs">
+                    <ol class="breadcrumb">
+                      <li><a href="<?php echo base_url('Home')?>">Home</a></li>
+                      <li class="active">Check out</li>
               <li><?php $id_user = $this->session->userdata('id_user');
-              foreach ($this->d->tampilpay($id_user) as $key) {
-                $order_id = $key->order_id;
-                echo $order_id;
-              }?></li>
-    				</ol>
-    			</div><!--/breadcrums-->
+                foreach ($this->d->tampilpay($id_user) as $key) {
+                    $order_id = $key->order_id;
+                    echo $order_id;
+                }?></li>
+                    </ol>
+                </div><!--/breadcrums-->
 <?php
 
 
 $c = count($data);
-if ($c == 0){
-
-?>
+if ($c == 0) {
+    ?>
 <h1 align="center">Tidak ada pesanan</h1>
 <br>
 <div class="col-sm-3">
@@ -45,21 +44,21 @@ if ($c == 0){
    <th>Harga</th>
    <th>Tujuan</th>
  </tr>
- <?php
-$id_user = $this->session->userdata('id_user');
- foreach ($this->d->orderhistory($id_user) as $y) {
-   # code...
- ?>
+    <?php
+    $id_user = $this->session->userdata('id_user');
+    foreach ($this->d->orderhistory($id_user) as $y) {
+      # code...
+        ?>
    <tr align="">
      <td><div style=""> <?php $id_barang = $y->id_barang;
         foreach ($this->c->getbarang($id_barang) as $key) {
-        ?><img src="<?php echo base_url()?>assets/images/home/<?php echo $key->gambar;?>" width="160" height="90" alt=""></img><br>
-      <?php }?></div></td>
+            ?><img src="<?php echo base_url()?>assets/images/home/<?php echo $key->gambar;?>" width="160" height="90" alt=""></img><br>
+        <?php }?></div></td>
       <td><div style=""> <?php $id_barang = $y->id_barang;
-         foreach ($this->c->getbarang($id_barang) as $key) {
-         ?>
+        foreach ($this->c->getbarang($id_barang) as $key) {
+            ?>
          <a href="<?php echo base_url()?>DetailProduct/getbarang/<?php echo ($key->id_barang)?>"><?php echo $key->nama_barang;?></a>
-       <?php }?></div></td>
+        <?php }?></div></td>
       <td>
      <td>
        <div style=""><?php echo $y->jumlah;?></div>
@@ -76,42 +75,41 @@ $id_user = $this->session->userdata('id_user');
      </td>
    </tr>
 
- <?php
-} ?>
+        <?php
+    } ?>
  </table>
  </div>
 </div>
 <br><br><br><br>
 <br><br><br><br><br>
-<?php }else {
-?>
+<?php } else {
+    ?>
 <div align="center">
 <h1 align="center" id="demo"></h1>
 <h5 align="center">Transfer di No Rekening bank dibawah ini sebelum waktu Count Down EXPIRED</h5>
-<?php $id_user = $this->session->userdata('id_user');
-foreach ($this->d->tampilpay($id_user) as $k) {
-  $i = $k->id_bank;
-  if ($i == "Bank Mandiri"){
-  ?>
+    <?php $id_user = $this->session->userdata('id_user');
+    foreach ($this->d->tampilpay($id_user) as $k) {
+        $i = $k->id_bank;
+        if ($i == "Bank Mandiri") {
+            ?>
   <img align="center" width="300px" src="<?php echo base_url()?>bank/Bank_Mandiri.png"></img>
   <h5>PT Said Krama Yudha 1560009861578</h5>
-  <?php } elseif ($i == "Bank BNI") {
-    ?>
+        <?php } elseif ($i == "Bank BNI") {
+            ?>
     <img align="center" width="300px" src="<?php echo base_url()?>bank/Bank_BNI.png"></img>
     <h5>PT Said Krama Yudha 0178305704</h5>
-    <?php
-  } else {
-
-  ?>
+            <?php
+        } else {
+    ?>
   <img align="center" width="300px" src="<?php echo base_url()?>bank/Bank_BCA.png"></img>
   <h5>PT Said Krama Yudha 5220304312</h5>
-  <?php
+    <?php
 }
-} ?>
+    } ?>
 </div>
 <!---->
 
-    			<div class="register-req">
+                <div class="register-req">
             <h3>Summary Order</h3>
             <table class="table table-striped">
              <tr>
@@ -122,45 +120,47 @@ foreach ($this->d->tampilpay($id_user) as $k) {
 
 
             <?php
-            foreach($data as $key) {
-              ?>
-         			 <tr>
-         				 <td>
-         					 <div style=""><?php echo $key->nama_barang;?></div>
-         				 </td>
-         				 <td align="center"><?php echo $key->jumlah;?></td>
-         				 <td align="center">Rp. <?php echo number_format($key->sub_total);?></td>
-         			 </tr>
-         			 <?php
-         			 }
-         			 ?>
-         		 </table>
+            foreach ($data as $key) {
+                ?>
+                     <tr>
+                         <td>
+                             <div style=""><?php echo $key->nama_barang;?></div>
+                         </td>
+                         <td align="center"><?php echo $key->jumlah;?></td>
+                         <td align="center">Rp. <?php echo number_format($key->sub_total);?></td>
+                     </tr>
+                     <?php
+            }
+            ?>
+                 </table>
              <p>Ongkir : Rp. <?php
-             $id_user = $this->session->userdata('id_user');
-             foreach ($this->d->tampilpay($id_user) as $key ) {
-               echo number_format($key->ongkir);
-             }?> </p>
+                $id_user = $this->session->userdata('id_user');
+                foreach ($this->d->tampilpay($id_user) as $key) {
+                    echo number_format($key->ongkir);
+                }?> </p>
              <h3>Total : Rp. <?php
-             $id_user = $this->session->userdata('id_user');
-             foreach ($this->d->tampilpay($id_user) as $key ) {
-               echo number_format($key->total_tagihan);
-             }?></h3>
+                $id_user = $this->session->userdata('id_user');
+                foreach ($this->d->tampilpay($id_user) as $key) {
+                    echo number_format($key->total_tagihan);
+                }?></h3>
              <form id="cancelorder" action="<?php echo base_url('Checkout/cancelorder')?>" method="post" class="form-horizontal">
               <input type="hidden" name="payment" value="<?php $id_user = $this->session->userdata('id_user');
-              foreach ($this->d->tampilpay($id_user) as $key ) {
-                echo $key->id_payment;
-              }?>"></input>
-              <input type="hidden" name="order" value="<?php foreach($data as $key) { echo $key->order_id;}?>">
+                foreach ($this->d->tampilpay($id_user) as $key) {
+                    echo $key->id_payment;
+                }?>"></input>
+              <input type="hidden" name="order" value="<?php foreach ($data as $key) {
+                    echo $key->order_id;
+                                                       }?>">
              <button type="submit"  id="btn-submit"class='btn btn-xs btn-danger pull-right'><i class='glyphicon glyphicon-remove'></i> &nbsp;Cancel Order&nbsp;</button>
            </form>
-    			</div><!--/register-req-->
+                </div><!--/register-req-->
 
           <form role="form" enctype="multipart/form-data" action="<?php echo site_url('Checkout/updatebank')?>"  method="post" class="form-horizontal">
             <?php
             $j = 0;
             foreach ($data as $key) {
               # code...
-            ?>
+                ?>
             <input type="hidden" name="barang_id<?php echo $j;?>" value="<?php echo $key->id_barang;?>"></input>
             <input type="hidden" name="order_id" value="<?php echo $key->order_id;?>"></input>
             <input type="hidden" name="jadi<?php echo $j;?>" value="<?php $i = $key->stok;
@@ -174,9 +174,9 @@ foreach ($this->d->tampilpay($id_user) as $k) {
               echo $c;
             ?>"></input>
 
-            <?php $j++;
+                <?php $j++;
             }
-          ?>
+            ?>
 
           <div class="form-group">
             <label class="col-xs-3 control-label">Nama Rekening</label>
@@ -201,18 +201,19 @@ foreach ($this->d->tampilpay($id_user) as $k) {
     <div class="form-group">
         <div class="col-xs-9 col-xs-offset-3">
             <input type="hidden" name="id_payment" value="<?php $id_user = $this->session->userdata('id_user');
-             foreach($this->d->tampilpay($id_user) as $ky){
-              echo $ky->id_payment;
+            foreach ($this->d->tampilpay($id_user) as $ky) {
+                echo $ky->id_payment;
             }?>"></input>
             <input type="hidden" id="tanggal" value="<?php $id_user = $this->session->userdata('id_user');
-             foreach($this->d->tampilpay($id_user) as $kay){
-             echo $kay->tanggal;}?>"></input>
+            foreach ($this->d->tampilpay($id_user) as $kay) {
+                echo $kay->tanggal;
+            }?>"></input>
             <button type="submit" id="beli" class="btn btn-primary">Beli</button>
         </div>
     </div>
 </form>
 <?php }?>
-    	</section> <!--/#cart_items-->
+        </section> <!--/#cart_items-->
       <footer>
       <div class="footer-bottom">
         <div class="container">

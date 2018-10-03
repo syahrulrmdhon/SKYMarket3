@@ -10,8 +10,8 @@
     <link href="<?php echo base_url()?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/price-range.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/animate.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>assets/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/responsive.css" rel="stylesheet">
   <link href="<?php echo base_url()?>assets/css/star-rating.css" rel="stylesheet">
   <link href="<?php echo base_url()?>assets/css/star-rating.min.css" rel="stylesheet">
 
@@ -37,19 +37,19 @@
 
         <div class="login-form">
          <img width="150px" src="<?php echo base_url()?>assets/images/home/logo2.png" alt="" />
-         <?php
+            <?php
   // Cetak session
- if($this->session->flashdata('sukses')) {
-   echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
- }
+            if ($this->session->flashdata('sukses')) {
+                echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
+            }
  // Cetak error
- echo validation_errors('<p class="warning" style="margin: 10px 20px;">','</p>');
- ?>
-    	 <form id="regis"  action="<?php echo base_url('Register') ?>" method="post">
+            echo validation_errors('<p class="warning" style="margin: 10px 20px;">', '</p>');
+            ?>
+         <form id="regis"  action="<?php echo base_url('Register') ?>" method="post">
          <input type="hidden" name="id_user" value="<?php
-         $kode = uniqid();
-         $kode2="U".str_pad($kode,3,"0",STR_PAD_LEFT);
-         echo $kode2;?>" placeholder="<?php echo $kode?>"/>
+            $kode = uniqid();
+            $kode2="U".str_pad($kode, 3, "0", STR_PAD_LEFT);
+            echo $kode2;?>" placeholder="<?php echo $kode?>"/>
          <p>
          <div class="form-group ">
            <input type="text" name="nama_lengkap" class="form-control" placeholder="Nama " id="nama_lengkap">
@@ -75,8 +75,8 @@
           <input type="hidden" name="profile_picture" value="akun.png" placeholder="Member"/>
           <input type="hidden" name="tanggal_daftar" value="<?php echo date('Y-m-d H:i:s');?>" placeholder="<?php echo date('Y-m-d H:i:s');?>"/>
           <a class="link" href="<?php echo base_url('Login')?>">Sudah punya akun? Masuk</a>
-    	  <input type="submit"  id="btn-submit" value="Daftar" class="btn btn-default" ></input>
-    	 </form>
+          <input type="submit"  id="btn-submit" value="Daftar" class="btn btn-default" ></input>
+         </form>
       </section>
 
 

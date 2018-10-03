@@ -10,8 +10,8 @@
     <link href="<?php echo base_url()?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/price-range.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/animate.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>assets/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/responsive.css" rel="stylesheet">
   <link href="<?php echo base_url()?>assets/css/star-rating.css" rel="stylesheet">
   <link href="<?php echo base_url()?>assets/css/star-rating.min.css" rel="stylesheet">
 
@@ -40,20 +40,20 @@
 
 
       <br><br><br><br>
-		<div class="login-form">
+        <div class="login-form">
      <img width="150px" src="<?php echo base_url()?>assets/images/home/logo2.png" alt="" />
-     <?php
+        <?php
    // Cetak session
-  if($this->session->flashdata('sukses')) {
-    echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
-  }
+        if ($this->session->flashdata('sukses')) {
+            echo '<p class="warning" style="margin: 10px 20px;">'.$this->session->flashdata('sukses').'</p>';
+        }
   // Cetak error
-  else {
-  echo validation_errors('<p class="warning" style="margin: 10px 20px;">','</p>');
-  }
+        else {
+            echo validation_errors('<p class="warning" style="margin: 10px 20px;">', '</p>');
+        }
 
-  ?>
-	 <form action="<?php echo base_url('Login') ?>" method="post">
+        ?>
+     <form action="<?php echo base_url('Login') ?>" method="post">
      <br><br><br><br>
      <div class="form-group ">
        <input type="text" name="email" class="form-control" placeholder="Email " id="email">
@@ -65,14 +65,14 @@
      </div>
       <span class="alert">Invalid Credentials</span>
       <a class="link" href="<?php echo base_url('Register')?>">Belum punya akun? Daftar</a>
-	  <input type="submit" value="Masuk" class="btn btn-default" ></input>
-	 </form>
+      <input type="submit" value="Masuk" class="btn btn-default" ></input>
+     </form>
 
 
    </div>
     </section>
 
-	</section><!--/form-->
+    </section><!--/form-->
 
 </section>
 

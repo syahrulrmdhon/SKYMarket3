@@ -21,24 +21,18 @@ $err = curl_error($curl);
 curl_close($curl);
 
 if ($err) {
-  echo "cURL Error #:" . $err;
+    echo "cURL Error #:" . $err;
 } else {
   //echo $response;
 
-  $data = json_decode($response, true);
+    $data = json_decode($response, true);
   //echo json_encode($k['rajaongkir']['results']);
 
 
-  for ($i=0; $i < count($data['rajaongkir']['results']); $i++){
-
-
-    echo "<option name='province' value='".$data['rajaongkir']['results'][$i]['province_id']."'
+    for ($i=0; $i < count($data['rajaongkir']['results']); $i++) {
+        echo "<option name='province' value='".$data['rajaongkir']['results'][$i]['province_id']."'
     valuea='".$data['rajaongkir']['results'][$i]['province_id']."'
     valueb='".$data['rajaongkir']['results'][$i]['province']."'>".$data['rajaongkir']['results'][$i]['province']."</option>";
-    //echo "<input type='hidden' name='id_province' value='".$data['rajaongkir']['results'][$i]['province_id']."'></input>";
-
-  }
-
+      //echo "<input type='hidden' name='id_province' value='".$data['rajaongkir']['results'][$i]['province_id']."'></input>";
+    }
 }
-
-?>

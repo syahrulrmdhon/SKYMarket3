@@ -11,8 +11,8 @@
     <link href="<?php echo base_url()?>assets/css/prettyPhoto.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/price-range.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/css/animate.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
-	<link href="<?php echo base_url()?>assets/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>assets/css/responsive.css" rel="stylesheet">
   <link href="<?php echo base_url()?>assets/css/star-rating.css" rel="stylesheet">
   <link href="<?php echo base_url()?>assets/css/star-rating.min.css" rel="stylesheet">
   <!--<script src="<?php echo base_url()?>assets/js/html5shiv.js"></script>-->

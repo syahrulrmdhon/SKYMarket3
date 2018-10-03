@@ -1,19 +1,19 @@
 <?php
   include_once('layout/wrapper.php');
- ?>
- <?php
+?>
+    <?php
 // Proteksi halaman
     $this->simple_login->cek_login();
-  ?>
+    ?>
   <section id="cart_items">
-    		<div class="container">
-    			<div class="breadcrumbs">
-    				<ol class="breadcrumb">
-    				  <li><a href="<?php echo base_url('Home')?>">Home</a></li>
-    				  <li class="active">Check out</li>
+            <div class="container">
+                <div class="breadcrumbs">
+                    <ol class="breadcrumb">
+                      <li><a href="<?php echo base_url('Home')?>">Home</a></li>
+                      <li class="active">Check out</li>
 
-    				</ol>
-    			</div><!--/breadcrums-->
+                    </ol>
+                </div><!--/breadcrums-->
           <h1 align="center">Terimakasih telah memesan</h1>
           <h5 align="center">cek email untuk menerima resi pengiriman</h5>
           <h5  align="center"><a href="<?php echo base_url('Checkout')?>">cek resi disini</a></h5>

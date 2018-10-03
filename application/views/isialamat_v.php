@@ -1,9 +1,9 @@
 <?php
   include_once('layout/wrapper.php');
- ?>
- <?php
-   include_once('layout/sidebar.php');
-  ?>
+?>
+    <?php
+    include_once('layout/sidebar.php');
+    ?>
 <div class="col-sm-4">
   <div class="signup-form"><!--sign up form-->
     <br><div class="alert alert-warning">
@@ -11,9 +11,9 @@
     </div>
     <form action="<?php echo base_url('isialamat')?>" method="post">
       <input type="hidden" name="id_alamat" value="<?php
-      $kode = uniqid();
-      $kode2="U".str_pad($kode,3,"0",STR_PAD_LEFT);
-      echo $kode2;?>" placeholder="<?php echo $kode?>"/>
+        $kode = uniqid();
+        $kode2="U".str_pad($kode, 3, "0", STR_PAD_LEFT);
+        echo $kode2;?>" placeholder="<?php echo $kode?>"/>
       <input type="hidden" name="id_user" value="<?php echo ucfirst($this->session->userdata('id_user'));?>">
       <input type="text" name="alamat" value="<?php echo set_value('alamat'); ?>" placeholder="Alamat"/>
       <input type="text" name="kodepos" value="<?php echo set_value('kodepos'); ?>" placeholder="Kode Pos"/>
@@ -27,6 +27,6 @@
 
 </section>
 
-  <?php
+    <?php
     include_once('layout/footer.php');
-   ?>
+    ?>

@@ -20,22 +20,17 @@ $err = curl_error($curl);
 curl_close($curl);
 
 if ($err) {
-  echo "cURL Error #:" . $err;
+    echo "cURL Error #:" . $err;
 } else {
   //echo $response;
-  $data = json_decode($response, true);
+    $data = json_decode($response, true);
   //echo json_encode($k['rajaongkir']['results']);
 
 
-  for ($j=0; $j < count($data['rajaongkir']['results']); $j++){
-
-
-    echo "<option name='city' value='".$data['rajaongkir']['results'][$j]['city_id']."'
+    for ($j=0; $j < count($data['rajaongkir']['results']); $j++) {
+        echo "<option name='city' value='".$data['rajaongkir']['results'][$j]['city_id']."'
     valuelain='".$data['rajaongkir']['results'][$j]['city_id']."'
     valuelagi='".$data['rajaongkir']['results'][$j]['city_name']."'>".$data['rajaongkir']['results'][$j]['city_name']."</option>";
-    //echo "<input type='hidden' name='id_city' value='".$data['rajaongkir']['results'][$j]['city_id']."'></input>";
-
-  }
+      //echo "<input type='hidden' name='id_city' value='".$data['rajaongkir']['results'][$j]['city_id']."'></input>";
+    }
 }
-
-?>

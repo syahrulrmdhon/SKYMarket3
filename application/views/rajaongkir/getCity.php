@@ -20,19 +20,14 @@ $err = curl_error($curl);
 curl_close($curl);
 
 if ($err) {
-  echo "cURL Error #:" . $err;
+    echo "cURL Error #:" . $err;
 } else {
   //echo $response;
-  $data = json_decode($response, true);
+    $data = json_decode($response, true);
   //echo json_encode($k['rajaongkir']['results']);
 
 
-  for ($j=153; $j < count($data['rajaongkir']['results']) and $j<=153; $j++){
-
-
-    echo "<option value='".$data['rajaongkir']['results'][$j]['city_id']."'>".$data['rajaongkir']['results'][$j]['city_name']."</option>";
-
-  }
+    for ($j=153; $j < count($data['rajaongkir']['results']) and $j<=153; $j++) {
+        echo "<option value='".$data['rajaongkir']['results'][$j]['city_id']."'>".$data['rajaongkir']['results'][$j]['city_name']."</option>";
+    }
 }
-
-?>
